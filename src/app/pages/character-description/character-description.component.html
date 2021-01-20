@@ -1,0 +1,18 @@
+<div *ngIf="character$ | async as character" class="card mb-3 m-4 rounded shadow" style="max-width: 600px">
+  <div class="row g-0">
+    <div class="col-md-6">
+      <img class="rounded" [src]="character.image" [alt]="character.name" />
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h5 class="card-title">Name: {{ character.name }}</h5>
+        <p class="card-text">Status: {{ character.status }}</p>
+        <p class="card-text">Gender: {{ character.gender }}</p>
+        <p class="card-text">Spacies: {{ character.species }}</p>
+      </div>
+      <div class="card-body text-center">
+        <button type="button" class="btn btn-secondary" [routerLink]="['/characters']">Go back</button>
+      </div>
+    </div>
+  </div>
+</div>

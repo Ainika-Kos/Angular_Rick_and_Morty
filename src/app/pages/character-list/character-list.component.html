@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row ">
+    <div class="card-deck justify-content-center" *ngIf="characters$ | async as characters">
+      <div *ngFor="let character of characters" class="col-sm-12 col-lg-4 d-flex align-items-stretch">
+        <div class="card text-center shadow m-4">
+          <img class="card-img-top" [src]="character.image" alt="Card image">
+          <div class="card-body">
+            <p class="card-title m-1">#{{character.id}}</p>
+            <h5 class="card-subtitle text-wrap m-1"> {{character.name}}</h5>
+            <a [routerLink]="['/characters/'+ character.id]"  class="btn btn-secondary btn-sm shadow m-2">See Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
